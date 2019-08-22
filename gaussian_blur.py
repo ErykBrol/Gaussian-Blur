@@ -1,12 +1,8 @@
-import math
 import numpy as np
 from numpy.lib.stride_tricks import as_strided
-from PIL import Image
 
-
-# Expected that kernel is symmetrical (width = height)
-# and contains odd number of elements
-def gauss_filter(image, kernel):
+# Expected that kernel is symmetrical (width = height) and contains odd number of elements
+def gaussian_filter(image, kernel):
     # Step 1: Pad with blank pixels so that kernel fits over image evenly
     #pad_width = (kernel.shape[0] - 1) // 2
     #padded_image = np.pad(image, pad_width, 'constant', constant_values=(0, 0))
@@ -49,20 +45,3 @@ def gauss_filter(image, kernel):
 
     # Step 5: Return filtered image
     return output_image
-
-
-# Takes an image and makes it grayscale by averaging its rgb values
-def to_grayscale(img):
-    output = np.zeros((img.shape[0], img.shape[1]), dtype=float)
-
-    i = 0
-    j = 0
-
-    for row in img:
-        for pixel in row:
-            output[j, i] = (pixel[0] + pixel[1] + pixel[2]) / 3
-            i += 1
-        j += 1
-        i = 0
-
-    return output
