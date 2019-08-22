@@ -6,7 +6,7 @@ Gaussian blur algorithm using 3x3/7x7 kernel
 
 Input:
 
-<img src=images/guitar.png width=50% alt="">
+<img src=images/guitar.png width=25% alt="">
 
 Output (No blur, 3x3 kernel, 7x7 kernel):
 
